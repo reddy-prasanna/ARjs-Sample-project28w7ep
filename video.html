@@ -15,21 +15,19 @@
                     marker.addEventListener('markerFound', function () {
                         this.toggle = true;
                         linkBtn = true;
-                        document.querySelector('#testText').innerHTML = 'markerFound';
                         this.vid.play();
                     }.bind(this));
 
                     marker.addEventListener('markerLost', function () {
                         this.toggle = false;
                         linkBtn = false;
-                        document.querySelector('#testText').innerHTML = 'markerLost';
                         this.vid.pause();
                     }.bind(this));
                     
                      if(linkBtn) {
-                        document.querySelector('#linkDiv').style.display='block';
+                        document.querySelector('#linkDiv').style.visibility = 'visible';
                     } else {
-                        document.querySelector('#linkDiv').style.display='none';
+                        document.querySelector('#linkDiv').style.visibility = 'hidden';
                     }
                 },
             });
