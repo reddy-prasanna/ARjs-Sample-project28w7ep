@@ -23,14 +23,14 @@
                         linkBtn = false;
                         this.vid.pause();
                     }.bind(this));
+                    
+                     if(linkBtn) {
+                        document.getElementById('linkDiv').style.display='block';
+                    } else {
+                        document.getElementById('linkDiv').style.display='none';
+                    }
                 },
             });
-            
-            if(linkBtn) {
-                document.getElementById('linkDiv').style.display='block';
-            } else {
-                document.getElementById('linkDiv').style.display='none';
-            }
         </script>
     </head>
 
