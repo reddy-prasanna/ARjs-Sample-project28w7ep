@@ -6,7 +6,7 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         <script>
-//             let linkBtn = false;
+            let linkBtn = false;
             AFRAME.registerComponent('videohandler', {
                 init: function () {
                     var marker = this.el;
@@ -14,23 +14,23 @@
 
                     marker.addEventListener('markerFound', function () {
                         this.toggle = true;
-//                         linkBtn = true;
-                        document.getElementById('testText').innerHTML = 'markerFound';
+                        linkBtn = true;
+                        document.querySelector('#testText').innerHTML = 'markerFound';
                         this.vid.play();
                     }.bind(this));
 
                     marker.addEventListener('markerLost', function () {
                         this.toggle = false;
-//                         linkBtn = false;
-                        document.getElementById('testText').innerHTML = 'markerLost';
+                        linkBtn = false;
+                        document.querySelector('#testText').innerHTML = 'markerLost';
                         this.vid.pause();
                     }.bind(this));
                     
-//                      if(linkBtn) {
-//                         document.getElementById('linkDiv').style.display='block';
-//                     } else {
-//                         document.getElementById('linkDiv').style.display='none';
-//                     }
+                     if(linkBtn) {
+                        document.querySelector('#linkDiv').style.display='block';
+                    } else {
+                        document.querySelector('#linkDiv').style.display='none';
+                    }
                 },
             });
         </script>
