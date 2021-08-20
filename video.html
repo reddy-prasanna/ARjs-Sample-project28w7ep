@@ -12,11 +12,13 @@
                     this.vid = document.querySelector("#vid");
 
                     marker.addEventListener('markerFound', function () {
+                        document.getElementById('linkDiv').style.display='block';
                         this.toggle = true;
                         this.vid.play();
                     }.bind(this));
 
                     marker.addEventListener('markerLost', function () {
+                        document.getElementById('linkDiv').style.display='none';
                         this.toggle = false;
                         this.vid.pause();
                     }.bind(this));
@@ -64,7 +66,7 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-                <div>
+                <div id="linkDiv">
                     <a href="https://www.facebook.com" target="_blank">
                         link
                     </a>
